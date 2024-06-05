@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'users/new'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :posts, only: [:new, :create, :index]
+  resources :Posts, only: [:new, :create, :index]
   root 'posts#index'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new',         via: 'get'
